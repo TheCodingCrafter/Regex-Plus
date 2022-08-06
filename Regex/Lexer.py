@@ -45,5 +45,3 @@ class Lexer:
     
     def __repr__(self) -> str:
         return self.__str__()
-
-l = Lexer()
