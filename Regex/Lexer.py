@@ -4,6 +4,11 @@ Lexer for Regex+
 from tokens import *
 import token
 
+class Regex:
+    def __init__(self, code):
+        self.code = code
+
+
 # https://stackoverflow.com/questions/20256066
 def SpaceSplit(string):
   last = 0
@@ -29,9 +34,9 @@ def SpaceSplit(string):
 class Lexer:
     def __init__(self) -> None:
         pass
-    
-    def compile(self, string) -> list:
-        pass
+
+    def Compile(self, string) -> list:
+        return Regex(self.Analyse(string)) # Return Regex object
 
     def Analyse(self, string) -> list:
         s1 = SpaceSplit(string) # Split string by spaces

@@ -8,6 +8,7 @@ T_TRUE = 'TRUE'
 T_FALSE = 'FALSE'
 T_LETTER = 'LETTER'
 T_NUM = 'NUM'
+T_IS = 'IS'
 
 T_STAR = '*'
 

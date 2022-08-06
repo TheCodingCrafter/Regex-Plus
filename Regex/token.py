@@ -43,11 +43,13 @@ def GetTok(s):
         return Token(s1[6:], T_WHERE)
 
     s2 = s.strip('.') # Remove '.' to check if num
+    if s2[0] == '-': # remove minus for negative num
+        s2 = s2[1:] # remove minus
     if s2.isdigit() and util.count(s2, '.') <= 1: # Check if num, ensuring not more than one '.'
         if util.count(s2, '.') == 0: # Check if num is an int
-            return Token(int(s2), T_NUMBER) # if so return int
+            return Token(int(s), T_NUMBER) # if so return int
         else:
-            return Token(float(s1), T_NUMBER) # else return float
+            return Token(float(s), T_NUMBER) # else return float
 
     elif s1[0] == "%": # Check if variable
         return Token(s1[1], T_VARIABLE) # if so return variable
@@ -59,6 +61,6 @@ def GetTok(s):
             if s1[0] == '"' or s1[0] == "'": # Check if unclosed string
                 raise util.RegexSyntaxError(f'unclosed string: {s}') # raise error for unclosed string
             else:
-                raise util.RegexSyntaxError(f'invalid token: {s}') # else raise error for invalid token
+                raise util.RegexSyntaxError(f'invalid statement: {s}') # else raise error for invalid statement
 
         
