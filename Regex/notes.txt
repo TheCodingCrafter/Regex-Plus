@@ -1,2 +1,55 @@
 DEV NOTES:
-##############################################################
+
+commit with:
+git add .
+git commit -m "<message>"
+git push -u origin master
+
+
+SYNTAX:
+
+NOTE qoutes are NOT used, spaces are the delimiter.
+NOTE iterators use SINGLE CHARS.
+
+SELECT KEYWORD:
+essentialy an output keyword, sets output to be the procedding value
+often used like so:
+
+SELECT * FROM
+where:
+    * = everything
+    FROM = FROM keyword
+
+
+* can be replaced with a number to select a certain amount of data
+data comes in a list format, SELECT 6, will select the first 6 data points
+use negative numbers to select from the end of the list
+SELECT -3, selects the last elements
+
+use FROM to specify where to get the data from:
+
+SELECT * FROM %I WHERE:I %x NOT NUM
+where:
+    %I = Input var
+    %x = iterator var
+
+the above scipt takes input and gets everything that is not a number
+% is used to indicate a variable
+%<v> = <v> with <v> being the variable name
+
+below names are reserved:
+    %I = input
+    %x = iterator
+
+
+WHERE KEYWORD:
+the WHERE keyword is similar to an if statement, and has several modes
+specify mode with
+
+WHERE:<m>
+where:
+    <m> = mode
+
+modes:
+    I = iterator
+    C = comparision (if statement WHERE:C <condition>)
